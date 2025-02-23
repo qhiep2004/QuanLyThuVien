@@ -9,6 +9,7 @@ namespace QuanLyThuVien.Data
 
         public DbSet<TaiKhoan> TaiKhoan { get; set; }
         public DbSet<NguoiDung> NguoiDung { get; set; }
+         public DbSet<TaiLieu> TaiLieu { get; set; }
 
        protected override void OnModelCreating(ModelBuilder modelBuilder)
 {
@@ -17,6 +18,7 @@ namespace QuanLyThuVien.Data
     // Ánh xạ đến bảng có sẵn trong cơ sở dữ liệu
     modelBuilder.Entity<TaiKhoan>().ToTable("tblTaiKhoan");
     modelBuilder.Entity<NguoiDung>().ToTable("tblNguoiDung");
+    modelBuilder.Entity<TaiLieu>().ToTable("tblTaiLieu");
    // Định nghĩa TaiKhoan là một keyless entity
     modelBuilder.Entity<TaiKhoan>().HasNoKey();
 }

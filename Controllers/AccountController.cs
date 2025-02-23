@@ -43,7 +43,7 @@ public IActionResult Login(TaiKhoan model)
         if (user != null)
         {
             // Chuyển hướng về Home nếu đăng nhập thành công
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "TaiLieu");
         }
 
         // Nếu đăng nhập thất bại, thêm lỗi vào ModelState

@@ -35,6 +35,13 @@ CREATE TABLE tblTaiLieu (
     sTinhTrang NVARCHAR(50),
 	sViTri nvarchar(50)
 );
+
+ALTER TABLE tblTaiLieu
+ALTER COLUMN sTheLoai NVARCHAR(50) NOT NULL;
+SELECT * FROM tblTaiLieu
+WHERE sTheLoai IS NULL;
+
+
 CREATE TABLE tblMuonTra (
     sMaMuonTra VARCHAR(20) PRIMARY KEY,
     sMaNguoiDung VARCHAR(20) NOT NULL,
@@ -125,3 +132,21 @@ BEGIN
         SELECT 'Fail' AS Result;
     END
 END;
+
+
+INSERT INTO tblTaiLieu (sMaTaiLieu, sTenTaiLieu, sTenTacGia, sTheLoai, iNamXuatBan, sNXB, iSoLuong, sTinhTrang, sViTri) 
+VALUES
+(N'TL001', N'Cấu trúc dữ liệu và giải thuật', N'Nguyễn Văn A', N'Khoa học máy tính & Lập trình', 2020, N'NXB Giáo Dục', 5, N'Còn sách', N'A1-101'),
+(N'TL002', N'Lập trình Python cơ bản', N'Trần Văn B', N'Khoa học máy tính & Lập trình', 2021, N'NXB Trẻ', 3, N'Còn sách', N'A1-102'),
+(N'TL003', N'Kiến trúc máy tính', N'Nguyễn Văn C', N'Hệ thống máy tính & Mạng', 2019, N'NXB Khoa Học', 2, N'Còn sách', N'B1-201'),
+(N'TL004', N'Quản trị hệ thống Windows Server', N'Lê Thị D', N'Hệ thống máy tính & Mạng', 2022, N'NXB Thông Tin', 4, N'Còn sách', N'B1-202'),
+(N'TL005', N'MySQL cơ bản và nâng cao', N'Phạm Văn E', N'Cơ sở dữ liệu & Khoa học dữ liệu', 2021, N'NXB Công Nghệ', 6, N'Còn sách', N'C1-301'),
+(N'TL006', N'HTML, CSS và JavaScript cơ bản', N'Nguyễn Văn F', N'Phát triển phần mềm & Công nghệ Web', 2023, N'NXB Lập Trình', 7, N'Còn sách', N'C1-302'),
+(N'TL007', N'Lập trình AI với TensorFlow', N'Trần Văn G', N'Trí tuệ nhân tạo & Máy học', 2022, N'NXB AI', 3, N'Còn sách', N'D1-401');
+
+
+delete  from  tblTaiLieu
+
+select * from tblTaiLieu
+
+

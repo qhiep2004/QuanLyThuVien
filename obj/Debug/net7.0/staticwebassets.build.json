@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wf2Sy7PfHHA5rDrUQlWtOav9I2WSuasJ81g+hKcBNqw=",
+  "Hash": "sx29yPsK4uimMF4JZQLWHgTgCYNICpBL8Dlu+dOT3Bc=",
   "Source": "QuanLyThuVien",
   "BasePath": "_content/QuanLyThuVien",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "d:\\QuanLyThuVien\\wwwroot\\img\\anhgioithieu.jpg",
+      "SourceId": "QuanLyThuVien",
+      "SourceType": "Discovered",
+      "ContentRoot": "d:\\QuanLyThuVien\\wwwroot\\",
+      "BasePath": "_content/QuanLyThuVien",
+      "RelativePath": "img/anhgioithieu.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\anhgioithieu.jpg"
     },
     {
       "Identity": "d:\\QuanLyThuVien\\wwwroot\\js\\site.js",

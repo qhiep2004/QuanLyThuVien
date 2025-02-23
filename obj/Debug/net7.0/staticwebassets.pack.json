@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "d:\\QuanLyThuVien\\wwwroot\\img\\anhgioithieu.jpg",
+      "PackagePath": "staticwebassets\\img\\anhgioithieu.jpg"
+    },
+    {
       "Id": "d:\\QuanLyThuVien\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

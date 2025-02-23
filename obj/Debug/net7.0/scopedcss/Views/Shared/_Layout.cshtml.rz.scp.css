@@ -39,10 +39,37 @@ button.accept-policy[b-ylxhx44hye] {
   line-height: inherit;
 }
 
-.footer[b-ylxhx44hye] {
+/* .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+footer h5 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+} */
+
+footer p[b-ylxhx44hye] {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+footer iframe[b-ylxhx44hye] {
+  border-radius: 5px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
+}
+
+footer .col-md-4[b-ylxhx44hye] {
+  margin-bottom: 20px !important;
 }

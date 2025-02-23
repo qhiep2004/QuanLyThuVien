@@ -40,6 +40,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[d:/QuanLyThuVien/Views/TaiLieu/DanhSachSach.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFpTGlldVxEYW5oU2FjaFNhY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/QuanLyThuVien/Views/TaiLieu/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFpTGlldVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [d:/QuanLyThuVien/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
