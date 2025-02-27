@@ -17,6 +17,34 @@
       "PackagePath": "staticwebassets\\img\\anhgioithieu.jpg"
     },
     {
+      "Id": "d:\\QuanLyThuVien\\wwwroot\\img\\tailieu1.jpg",
+      "PackagePath": "staticwebassets\\img\\tailieu1.jpg"
+    },
+    {
+      "Id": "d:\\QuanLyThuVien\\wwwroot\\img\\tailieu2.jpg",
+      "PackagePath": "staticwebassets\\img\\tailieu2.jpg"
+    },
+    {
+      "Id": "d:\\QuanLyThuVien\\wwwroot\\img\\tailieu3.jpg",
+      "PackagePath": "staticwebassets\\img\\tailieu3.jpg"
+    },
+    {
+      "Id": "d:\\QuanLyThuVien\\wwwroot\\img\\tailieu4.jpg",
+      "PackagePath": "staticwebassets\\img\\tailieu4.jpg"
+    },
+    {
+      "Id": "d:\\QuanLyThuVien\\wwwroot\\img\\tailieu5.jpg",
+      "PackagePath": "staticwebassets\\img\\tailieu5.jpg"
+    },
+    {
+      "Id": "d:\\QuanLyThuVien\\wwwroot\\img\\tailieu6.jpg",
+      "PackagePath": "staticwebassets\\img\\tailieu6.jpg"
+    },
+    {
+      "Id": "d:\\QuanLyThuVien\\wwwroot\\img\\tailieu7.jpg",
+      "PackagePath": "staticwebassets\\img\\tailieu7.jpg"
+    },
+    {
       "Id": "d:\\QuanLyThuVien\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

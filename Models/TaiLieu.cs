@@ -14,6 +14,10 @@ namespace QuanLyThuVien.Models
         [Column("sTenTaiLieu")]
         public required string TenTaiLieu { get; set; }
 
+         [Required]
+        [Column("img")]
+        public required string img { get; set; }
+
         [Column("sTenTacGia")]
         public required string TenTacGia { get; set; }
 

@@ -1,17 +1,18 @@
 @{
     ViewData["Title"] = "Danh Mục Tài Liệu";
-    var theLoaiList = ViewBag.TheLoaiList as List<string>;
-    var selectedTheLoai = ViewBag.SelectedTheLoai as string;
-    var taiLieuList = Model as List<QuanLyThuVien.Models.TaiLieu>;
+
+    // Ép kiểu dữ liệu từ ViewBag
+    var theLoaiList = ViewBag.TheLoaiList as List<string> ?? new List<string>();
+    var selectedTheLoai = ViewBag.SelectedTheLoai as string ?? string.Empty;
+    var taiLieuList = Model as List<QuanLyThuVien.Models.TaiLieu> ?? new List<QuanLyThuVien.Models.TaiLieu>();
 }
+
 <style>
-   
 .list-group-item {
     background-color: white; 
     color: #333; 
     transition: background-color 0.3s ease; 
 }
-
 
 .list-group-item:hover {
     background-color: #f1f1f1;
@@ -19,49 +20,49 @@
     text-decoration: none; 
 }
 
-
 .list-group-item.active {
     background-color: #cce5ff; 
     color: #004085; 
     font-weight: bold; 
 }
 
-
 .list-group-item.active:hover {
     background-color: #b8daff; 
     color: #00376d; 
 }
-
 </style>
+
 <div class="row mt-4">
     <!-- Sidebar danh sách thể loại -->
     <div class="col-md-3">
         <h4>Danh Mục Thể Loại</h4>
-       <ul class="list-group">
-    <li class="list-group-item @(string.IsNullOrEmpty(selectedTheLoai) ? "active" : "")">
-        <a href="@Url.Action("Index", "TaiLieu")" class="text-decoration-none">Tất cả</a>
-    </li>
-    @foreach (var theLoai in ViewBag.theLoaiList)
-    {
-        <li class="list-group-item @(selectedTheLoai == theLoai ? "active" : "")">
-            <a href="@Url.Action("Index", "TaiLieu", new { theLoai = theLoai })" class="text-decoration-none">@theLoai</a>
-        </li>
-    }
-</ul>
-
+        <ul class="list-group">
+            <li class="list-group-item @(string.IsNullOrEmpty(selectedTheLoai) ? "active" : "")">
+                <a href="@Url.Action("Index", "TaiLieu")" class="text-decoration-none">Tất cả</a>
+            </li>
+            @foreach (var theLoai in theLoaiList)
+            {
+                <li class="list-group-item @(selectedTheLoai == theLoai ? "active" : "")">
+                    <a href="@Url.Action("Index", "TaiLieu", new { theLoai = theLoai })" class="text-decoration-none">@theLoai</a>
+                </li>
+            }
+        </ul>
     </div>
 
     <!-- Danh sách tài liệu -->
     <div class="col-md-9">
         <h4>Danh Sách Tài Liệu</h4>
         <div class="row">
-            @if (taiLieuList != null && taiLieuList.Any())
+            @if (taiLieuList.Any())
             {
                 @foreach (var taiLieu in taiLieuList)
                 {
                     <div class="col-md-4">
                         <div class="card mb-4">
-                            <div class="card-body">
+                            <div class="card-body text-center">
+                                <!-- Hiển thị hình ảnh tài liệu -->
+                                <img src="@Url.Content($"~/{taiLieu.img}")" alt="@taiLieu.TenTaiLieu" class="img-fluid mb-3" style="max-height: 200px;" />
+
                                 <h5 class="card-title">@taiLieu.TenTaiLieu</h5>
                                 <p class="card-text">
                                     <strong>Tác giả:</strong> @taiLieu.TenTacGia <br />

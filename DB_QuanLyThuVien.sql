@@ -37,6 +37,10 @@ CREATE TABLE tblTaiLieu (
 );
 
 ALTER TABLE tblTaiLieu
+ADD img NVARCHAR(255);
+
+
+ALTER TABLE tblTaiLieu
 ALTER COLUMN sTheLoai NVARCHAR(50) NOT NULL;
 SELECT * FROM tblTaiLieu
 WHERE sTheLoai IS NULL;
@@ -143,6 +147,36 @@ VALUES
 (N'TL005', N'MySQL cơ bản và nâng cao', N'Phạm Văn E', N'Cơ sở dữ liệu & Khoa học dữ liệu', 2021, N'NXB Công Nghệ', 6, N'Còn sách', N'C1-301'),
 (N'TL006', N'HTML, CSS và JavaScript cơ bản', N'Nguyễn Văn F', N'Phát triển phần mềm & Công nghệ Web', 2023, N'NXB Lập Trình', 7, N'Còn sách', N'C1-302'),
 (N'TL007', N'Lập trình AI với TensorFlow', N'Trần Văn G', N'Trí tuệ nhân tạo & Máy học', 2022, N'NXB AI', 3, N'Còn sách', N'D1-401');
+
+
+UPDATE tblTaiLieu
+SET img = 'img/tailieu1.jpg'
+WHERE sMaTaiLieu = 'TL001';
+
+
+UPDATE tblTaiLieu
+SET img = 'img/tailieu2.jpg'
+WHERE sMaTaiLieu = 'TL002';
+
+UPDATE tblTaiLieu
+SET img = 'img/tailieu3.jpg'
+WHERE sMaTaiLieu = 'TL003';
+
+UPDATE tblTaiLieu
+SET img = 'img/tailieu4.jpg'
+WHERE sMaTaiLieu = 'TL004';
+
+UPDATE tblTaiLieu
+SET img = 'img/tailieu5.jpg'
+WHERE sMaTaiLieu = 'TL005';
+
+UPDATE tblTaiLieu
+SET img = 'img/tailieu6.jpg'
+WHERE sMaTaiLieu = 'TL006';
+
+UPDATE tblTaiLieu
+SET img = 'img/tailieu7.jpg'
+WHERE sMaTaiLieu = 'TL007';
 
 
 delete  from  tblTaiLieu
