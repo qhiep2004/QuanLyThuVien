@@ -1,0 +1,65 @@
+@using QuanLyThuVien.ViewModels
+@model GioSachViewModel
+
+@{
+    ViewData["Title"] = "Giỏ Sách";
+}
+
+<h2>📚 Giỏ Sách Của Bạn</h2>
+
+@if (Model.NguoiDung != null)
+{
+    <div class="alert alert-info">
+        <strong>Người Mượn:</strong> @Model.NguoiDung.HoTen <br>
+        <strong>Email:</strong> @Model.NguoiDung.Email <br>
+        <strong>SĐT:</strong> @Model.NguoiDung.SDT
+    </div>
+}
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+
+<form asp-action="XacNhanMuonSach" method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Chọn</th>
+                <th>Hình Ảnh</th>
+                <th>Tên Tài Liệu</th>
+                <th>Tác Giả</th>
+                <th>Số Lượng</th>
+                <th>Thao Tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.GioSachItems)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" name="selectedItems" value="@item.MaTaiLieu" />
+                    </td>
+                    <td><img src="@item.img" alt="@item.TenTaiLieu" width="100"></td>
+                    <td>@item.TenTaiLieu</td>
+                    <td>@item.TenTacGia</td>
+                    <td>@item.SoLuong</td>
+                    <td>
+                        <a href="@Url.Action("XoaKhoiGio", "GioSach", new { id = item.MaTaiLieu })" 
+                           class="btn btn-danger btn-sm">❌ Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div>
+        <h3>Chọn Ngày Trả </h3>
+        <input type="date" name="ngayTraChung" class="form-control" required />
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary">Xác Nhận Mượn Sách</button>
+    </div>
+</form>
+

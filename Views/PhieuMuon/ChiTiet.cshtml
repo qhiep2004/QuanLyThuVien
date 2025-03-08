@@ -1,0 +1,60 @@
+@model QuanLyThuVien.Models.tblChiTietMuonTra
+
+@{
+    ViewData["Title"] = "Chi Tiết Tài Liệu";
+}
+<style>
+   
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; 
+}
+
+.table th, .table td {
+    word-wrap: break-word;
+    white-space: normal;
+    max-width: 150px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+
+</style>
+<h2>Chi Tiết Tài Liệu</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã Chi Tiết</th>
+            <th>Mã Mượn Trả</th>
+            <th>Mã Tài Liệu</th>
+            <th>Số Lượng Mượn</th>
+            <th>Tình Trạng Mượn</th>
+            <th>Số Lượng Trả</th>
+            <th>Tình Trạng Trả</th>
+            <th>Phí Phạt</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.MaChiTiet</td>
+            <td>@Model.MaMuonTra</td>
+            <td>@Model.MaTaiLieu</td>
+            <td>@Model.SoluongMuon</td>
+            <td>@Model.TinhTrangSachMuon</td>
+            <td>@Model.SoLuongTra</td>
+            <td>@Model.TinhTrangTra</td>
+            <td>@Model.PhiPhat</td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="@Url.Action("Index", "PhieuMuon")" class="btn btn-primary">Quay Lại Phiếu Mượn</a>

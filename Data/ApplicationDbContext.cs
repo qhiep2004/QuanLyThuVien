@@ -9,19 +9,34 @@ namespace QuanLyThuVien.Data
 
         public DbSet<TaiKhoan> TaiKhoan { get; set; }
         public DbSet<NguoiDung> NguoiDung { get; set; }
-         public DbSet<TaiLieu> TaiLieu { get; set; }
+        public DbSet<TaiLieu> TaiLieu { get; set; }
+        public DbSet<GioSach> GioSach { get; set; }
+        public DbSet<tblMuonTra> MuonTra { get; set; }
+        public DbSet<tblChiTietMuonTra> ChiTietMuonTra { get; set; }
 
-       protected override void OnModelCreating(ModelBuilder modelBuilder)
-{
-    base.OnModelCreating(modelBuilder);
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
 
-    // Ánh xạ đến bảng có sẵn trong cơ sở dữ liệu
-    modelBuilder.Entity<TaiKhoan>().ToTable("tblTaiKhoan");
-    modelBuilder.Entity<NguoiDung>().ToTable("tblNguoiDung");
-    modelBuilder.Entity<TaiLieu>().ToTable("tblTaiLieu");
-   // Định nghĩa TaiKhoan là một keyless entity
-    modelBuilder.Entity<TaiKhoan>().HasNoKey();
-}
+       
+            modelBuilder.Entity<TaiKhoan>().ToTable("tblTaiKhoan");
+            modelBuilder.Entity<NguoiDung>().ToTable("tblNguoiDung");
+            modelBuilder.Entity<TaiLieu>().ToTable("tblTaiLieu");
+            modelBuilder.Entity<GioSach>().ToTable("tblGioSach");
+            modelBuilder.Entity<tblMuonTra>().ToTable("tblMuonTra");
+            modelBuilder.Entity<tblChiTietMuonTra>().ToTable("tblChiTietMuonTra");
 
+             modelBuilder.Entity<TaiKhoan>()
+                .HasKey(t => t.MaTaiKhoan);
+
+            modelBuilder.Entity<NguoiDung>()
+                .HasKey(n => n.MaNguoiDung);
+
+            modelBuilder.Entity<TaiKhoan>()
+                .HasOne(t => t.NguoiDung)
+                .WithMany()
+                .HasForeignKey(t => t.MaNguoiDung);
+                    
+        }
     }
 }

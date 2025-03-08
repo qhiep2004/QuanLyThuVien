@@ -6,19 +6,45 @@
     var taiLieuSanSangChoMuon = ViewBag.TaiLieuSanSangChoMuon as int? ?? 0;
 }
 <style>
-    /* Toàn bộ container */
+    
+.list-group-item:hover {
+    background-color: #e3f2fd;
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+.news-section .news-box:hover {
+    background-color: #eef7ff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+.list-group-item a:hover {
+    color: #ff5733;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 .container {
     font-family: Arial, sans-serif;
 }
 
-/* Tiêu đề chính */
+
 h1 {
     font-size: 28px;
     font-weight: bold;
     color: #333;
 }
 
-/* Sidebar */
+
 .col-md-3 {
     background-color: #f9f9f9;
     border-right: 1px solid #ddd;
@@ -48,7 +74,7 @@ h1 {
     text-decoration: underline;
 }
 
-/* Thông báo */
+
 .bg-light {
     background-color: #fff !important;
     border: 1px solid #ddd;
@@ -62,7 +88,7 @@ h1 {
     margin-bottom: 10px;
 }
 
-/* Nội dung chính */
+
 .col-md-9 {
     padding: 15px;
 }
@@ -74,7 +100,7 @@ h1 {
     margin-bottom: 15px;
 }
 
-/* Thống kê nhanh */
+
 .p-3 {
     background-color: #f1f1f1;
     border: 1px solid #ddd;
@@ -96,7 +122,7 @@ h1 {
     font-weight: bold;
 }
 
-/* Danh sách tin tức */
+
 ul {
     list-style: none;
     padding: 0;
@@ -107,13 +133,6 @@ ul li {
     margin-bottom: 10px;
     line-height: 1.6;
 }
-
-ul li::before {
-    content: "• ";
-    color: #007bff;
-    font-weight: bold;
-}
-
 
 footer {
     text-align: center;
@@ -131,7 +150,6 @@ footer {
     gap: 20px;
 }
 
-/* Hộp nội dung tin tức */
 .news-section .news-box {
     flex: 1; 
     background-color: #f9f9f9;
@@ -141,7 +159,6 @@ footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
-/* Tiêu đề các hộp */
 .news-section .news-box h5 {
     font-size: 18px;
     font-weight: bold;
@@ -149,7 +166,6 @@ footer {
     color: #0056b3;
 }
 
-/* Danh sách nội dung tin tức */
 .news-section .news-box ul {
     list-style: none;
     padding: 0;
@@ -173,7 +189,7 @@ footer {
     <h1 class="text-center mb-4">Thư Viện - Trường Đại Học Mở Hà Nội</h1>
 
     <div class="row">
-        <!-- Sidebar Danh mục thể loại -->
+   
         <div class="col-md-3">
             <h4>Danh Mục Thể Loại</h4>
             <ul class="list-group">
@@ -191,7 +207,7 @@ footer {
                 }
             </ul>
 
-            <!-- Thông báo -->
+          
             <div class="mt-4 p-3 bg-light border">
                 <h5>Thông báo:</h5>
                 <p>Bạn có 2 tài liệu cần trả trước ngày 28/02/2025.</p>
@@ -199,9 +215,9 @@ footer {
             </div>
         </div>
 
-        <!-- Nội dung chính -->
+     
         <div class="col-md-9">
-            <!-- Danh sách tài liệu -->
+        
             <h4>Danh Sách Tài Liệu</h4>
             <div class="row">
                 @if (taiLieuList.Any())
@@ -210,7 +226,7 @@ footer {
                     {
                         <div class="col-md-4">
                             <div class="card mb-4">
-                                <img src="@Url.Content($"~/{taiLieu.img}")" alt="@taiLieu.TenTaiLieu" class="card-img-top" style="max-height: 200px; object-fit: cover;">
+                                <img src="@taiLieu.img" alt="@taiLieu.TenTaiLieu" class="card-img-top" style="max-height: 200px; object-fit: cover;">
                                 <div class="card-body">
                                     <h5 class="card-title">@taiLieu.TenTaiLieu</h5>
                                     <p class="card-text">
@@ -228,7 +244,7 @@ footer {
                 }
             </div>
 
-            <!-- Thống kê nhanh -->
+      
             <h4 class="mt-4">Thống Kê Nhanh</h4>
             <div class="row">
                 <div class="col-md-6">
@@ -247,7 +263,7 @@ footer {
 
 
            <div class="news-section">
-    <!-- Tin tức và sự kiện -->
+
     <div class="news-box">
         <h5>Tin tức và Sự Kiện</h5>
         <ul>
@@ -257,7 +273,6 @@ footer {
         </ul>
     </div>
 
-    <!-- Tin thư viện -->
     <div class="news-box">
         <h5>Tin Thư Viện</h5>
         <ul>

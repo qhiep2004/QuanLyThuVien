@@ -14,15 +14,15 @@ namespace QuanLyThuVien.Models
         [Column("sTenTaiLieu")]
         public required string TenTaiLieu { get; set; }
 
-         [Required]
-        [Column("img")]
+        [Required]
+        [Column("sAnhURL")]
         public required string img { get; set; }
 
         [Column("sTenTacGia")]
         public required string TenTacGia { get; set; }
 
         [Column("sTheLoai")]
-public string? TheLoai { get; set; } // Cho phép giá trị null
+        public string? TheLoai { get; set; } // Cho phép giá trị null
 
 
         [Column("iNamXuatBan")]
@@ -39,5 +39,6 @@ public string? TheLoai { get; set; } // Cho phép giá trị null
 
         [Column("sViTri")]
         public required string ViTri { get; set; }
+
     }
 }

@@ -10,11 +10,8 @@ namespace QuanLyThuVien.Models
         [Column("sMaTaiKhoan")] // Cột sMaTaiKhoan là khóa chính
         public required string MaTaiKhoan { get; set; }
 
-        // [Column("sMaNguoiDung")]
-        // public required string MaNguoiDung { get; set; }
-
-  
-
+        [Column("sMaNguoiDung")]
+        public required string MaNguoiDung { get; set; }
 
         [Required]
         [Column("sTenDangNhap")]
@@ -23,5 +20,7 @@ namespace QuanLyThuVien.Models
         [Required]
         [Column("sMatKhau")]
         public required string MatKhau { get; set; }
+        [ForeignKey("MaNguoiDung")]
+        public  NguoiDung? NguoiDung { get; set; }
     }
 }

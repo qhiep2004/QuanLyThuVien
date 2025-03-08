@@ -3,28 +3,28 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuanLyThuVien.Models
 {
-    [Table("tblNguoiDung")] // Ánh xạ tới bảng tblNguoiDung
+    [Table("tblNguoiDung")] 
     public class NguoiDung
     {
         [Key]
         [Column("sMaNguoiDung")]
-        public required string MaNguoiDung { get; set; }
+        public string MaNguoiDung { get; set; } = string.Empty; 
 
         [Required]
         [Column("sHoTen")]
-        public required string HoTen { get; set; }
+       public string HoTen { get; set; } = string.Empty; 
 
         [Column("sSDT")]
-        public required string SDT { get; set; }
+        public string? SDT { get; set; } 
 
         [Column("sMatKhau")]
-        public required string MatKhau { get; set; }
+       public string MatKhau { get; set; } = string.Empty; 
 
         [Column("sEmail")]
-        public required string Email { get; set; }
+        public string? Email { get; set; }
 
         [Required]
         [Column("sLoaiNguoiDung")]
-        public required string LoaiNguoiDung { get; set; }
+        public string? LoaiNguoiDung { get; set; } 
     }
 }

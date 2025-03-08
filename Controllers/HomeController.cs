@@ -16,10 +16,6 @@ public class HomeController : Controller
           _context = context;
     }
 
-    // public IActionResult Index()
-    // {
-    //     return View();
-    // }
 
     public IActionResult Privacy()
     {
@@ -35,28 +31,28 @@ public class HomeController : Controller
 
         public IActionResult Index()
         {
-            // Lấy danh sách tất cả tài liệu
+         
             var taiLieuList = _context.TaiLieu.ToList();
 
-            // Lấy danh mục thể loại duy nhất từ danh sách tài liệu
+         
             var theLoaiList = _context.TaiLieu
                 .Select(tl => tl.TheLoai)
                 .Distinct()
                 .ToList();
 
-            // Tính tổng số tài liệu
+       
             var tongSoTaiLieu = taiLieuList.Count;
 
-            // Đếm số tài liệu có sẵn sàng cho mượn
-            var taiLieuSanSangChoMuon = taiLieuList.Count(tl => tl.TinhTrang == "Còn sách");
+    
+            var taiLieuSanSangChoMuon = taiLieuList.Count(tl => tl.TinhTrang == "Có sẵn");
 
-            // Truyền dữ liệu qua ViewBag
+         
             ViewBag.TaiLieuList = taiLieuList;
             ViewBag.TheLoaiList = theLoaiList;
             ViewBag.TongSoTaiLieu = tongSoTaiLieu;
             ViewBag.TaiLieuSanSangChoMuon = taiLieuSanSangChoMuon;
 
-            // Trả về View
+          
             return View();
         }
 }

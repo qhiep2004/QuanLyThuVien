@@ -1,0 +1,38 @@
+@model IEnumerable<QuanLyThuVien.Models.tblMuonTra>
+@{
+   Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@{
+    ViewData["Title"] = "Quản Lý Phiếu Mượn";
+}
+
+<h2>Quản Lý Phiếu Mượn</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã Phiếu Mượn</th>
+            <th>Mã Người Dùng</th>
+            <th>Ngày Mượn</th>
+            <th>Ngày Hẹn Trả</th>
+            <th>Tình Trạng</th>
+            <th>Thao Tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MaMuonTra</td>
+                <td>@item.MaNguoiDung</td>
+                <td>@item.NgayMuon</td>
+                <td>@item.NgayHenTra</td>
+                <td>@item.TinhTrang</td>
+                <td>
+                    <a href="@Url.Action("XacNhanPhieuMuon", "Admin", new { id = item.MaMuonTra })" class="btn btn-primary btn-sm">Xác Nhận</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

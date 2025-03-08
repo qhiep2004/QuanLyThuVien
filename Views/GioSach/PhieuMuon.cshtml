@@ -1,0 +1,171 @@
+@model List<QuanLyThuVien.ViewModels.PhieuMuonViewModel>
+
+@{
+    ViewData["Title"] = "Phiếu Mượn";
+}
+
+<style>
+  
+    .table-phieu-muon {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .table-phieu-muon th, .table-phieu-muon td {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+    }
+
+    .table-phieu-muon th {
+        background-color: #f2f2f2;
+        color: #333;
+    }
+
+    .table-phieu-muon tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .table-phieu-muon tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .table-phieu-muon .btn {
+        padding: 5px 10px;
+        font-size: 16px;
+        margin: 5px;
+    }
+
+    .table-phieu-muon .btn-primary {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .table-phieu-muon .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .table-phieu-muon .btn-danger {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .table-phieu-muon .btn-danger:hover {
+        background-color: #c82333;
+    }
+
+    .phieu-muon-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .phieu-muon-card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+
+    .phieu-muon-header {
+        display: flex;
+        justify-content: space-between;
+        background-color: #f2f2f2;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .phieu-muon-content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .phieu-muon-content table {
+        width: 100%;
+    }
+
+    .phieu-muon-content th, .phieu-muon-content td {
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    .phieu-muon-content th {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<h2>Phiếu Mượn</h2>
+
+@if (Model.Count == 0)
+{
+    <p>Không có phiếu mượn nào.</p>
+}
+else
+{
+    <div class="phieu-muon-container">
+        @foreach (var phieuMuon in Model)
+        {
+            <div class="phieu-muon-card">
+                <div class="phieu-muon-header">
+                    <div>Thông Tin Người Mượn</div>
+                    <div>Thông Tin Tài Liệu</div>
+                    <div>Thông Tin Mượn</div>
+                </div>
+                <div class="phieu-muon-content">
+                    <table>
+                        <tr>
+                            <th>Họ Tên</th>
+                            <td>@phieuMuon.NguoiDung?.HoTen</td>
+                            <th>Ngày Mượn</th>
+                            <td>@phieuMuon.MuonTra.NgayMuon</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>@phieuMuon.NguoiDung?.Email</td>
+                            <th>Ngày Hẹn Trả</th>
+                            <td>@phieuMuon.MuonTra.NgayHenTra</td>
+                        </tr>
+                        <tr>
+                            <th>SĐT</th>
+                            <td>@phieuMuon.NguoiDung?.SDT</td>
+                            <th>Tình Trạng</th>
+                            <td>@phieuMuon.MuonTra.TinhTrang</td>
+                        </tr>
+                    </table>
+                    <h3>Thông Tin Tài Liệu</h3>
+                    <table class="table-phieu-muon">
+                        <thead>
+                            <tr>
+                                <th>Tên Tài Liệu</th>
+                                <th>Tác Giả</th>
+                                <th>Số Lượng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in phieuMuon.GioSachItems)
+                            {
+                                <tr>
+                                    <td>@item.TenTaiLieu</td>
+                                    <td>@item.TenTacGia</td>
+                                    <td>@item.SoLuong</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+<a href="@Url.Action("Index", "GioSach")" class="btn btn-primary">Quay Lại Giỏ Sách</a>

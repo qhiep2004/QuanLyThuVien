@@ -16,7 +16,7 @@ namespace QuanLyThuVien.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.0")
+                .HasAnnotation("ProductVersion", "7.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -59,14 +59,14 @@ namespace QuanLyThuVien.Migrations
 
             modelBuilder.Entity("QuanLyThuVien.Models.TaiKhoan", b =>
                 {
-                    b.Property<string>("MaTaiKhoan")
-                        .HasColumnType("nvarchar(450)")
-                        .HasColumnName("sMaTaiKhoan");
-
                     b.Property<string>("MaNguoiDung")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("sMaNguoiDung");
+
+                    b.Property<string>("MaTaiKhoan")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("sMaTaiKhoan");
 
                     b.Property<string>("MatKhau")
                         .IsRequired()
@@ -78,9 +78,60 @@ namespace QuanLyThuVien.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("sTenDangNhap");
 
-                    b.HasKey("MaTaiKhoan");
-
                     b.ToTable("tblTaiKhoan", (string)null);
+                });
+
+            modelBuilder.Entity("QuanLyThuVien.Models.TaiLieu", b =>
+                {
+                    b.Property<string>("MaTaiLieu")
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("sMaTaiLieu");
+
+                    b.Property<string>("NXB")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("sNXB");
+
+                    b.Property<int>("NamXuatBan")
+                        .HasColumnType("int")
+                        .HasColumnName("iNamXuatBan");
+
+                    b.Property<int>("SoLuong")
+                        .HasColumnType("int")
+                        .HasColumnName("iSoLuong");
+
+                    b.Property<string>("TenTacGia")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("sTenTacGia");
+
+                    b.Property<string>("TenTaiLieu")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("sTenTaiLieu");
+
+                    b.Property<string>("TheLoai")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("sTheLoai");
+
+                    b.Property<string>("TinhTrang")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("sTinhTrang");
+
+                    b.Property<string>("ViTri")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("sViTri");
+
+                    b.Property<string>("img")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("sAnhURL");
+
+                    b.HasKey("MaTaiLieu");
+
+                    b.ToTable("tblTaiLieu", (string)null);
                 });
 #pragma warning restore 612, 618
         }

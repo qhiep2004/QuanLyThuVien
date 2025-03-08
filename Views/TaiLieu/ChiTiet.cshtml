@@ -1,0 +1,17 @@
+@model QuanLyThuVien.Models.TaiLieu
+
+@{
+    ViewData["Title"] = "Chi Tiết Tài Liệu";
+}
+
+<h2>@Model.TenTaiLieu</h2>
+<img src="@Model.img" alt="@Model.TenTaiLieu" class="img-fluid mb-3" style="max-height: 200px;" />
+<p>
+    <strong>Tác giả:</strong> @Model.TenTacGia <br />
+    <strong>Thể loại:</strong> @Model.TheLoai <br />
+    <strong>Năm xuất bản:</strong> @Model.NamXuatBan <br />
+    <strong>Nhà xuất bản:</strong> @Model.NXB <br />
+    <strong>Số lượng:</strong> @Model.SoLuong <br />
+    <strong>Tình trạng:</strong> @Model.TinhTrang <br />
+    <strong>Vị trí:</strong> @Model.ViTri
+</p>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\QuanLyThuVien\\QuanLyThuVien.csproj": {}
+    "d:\\QuanLyThuVien (1)\\QuanLyThuVien.csproj": {}
   },
   "projects": {
-    "d:\\QuanLyThuVien\\QuanLyThuVien.csproj": {
+    "d:\\QuanLyThuVien (1)\\QuanLyThuVien.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\QuanLyThuVien\\QuanLyThuVien.csproj",
+        "projectUniqueName": "d:\\QuanLyThuVien (1)\\QuanLyThuVien.csproj",
         "projectName": "QuanLyThuVien",
-        "projectPath": "d:\\QuanLyThuVien\\QuanLyThuVien.csproj",
+        "projectPath": "d:\\QuanLyThuVien (1)\\QuanLyThuVien.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "d:\\QuanLyThuVien\\obj\\",
+        "outputPath": "d:\\QuanLyThuVien (1)\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 23.2\\Components\\Offline Packages"
@@ -47,7 +47,7 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -58,6 +58,16 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [

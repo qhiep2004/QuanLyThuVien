@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,8 +11,14 @@
     <style>
         /* Navbar styles */
         .navbar {
-            background-color: #003366; /* Màu nền xanh đậm */
+            background-color: #003366;
+            /* Màu nền xanh đậm */
             padding: 10px;
+        }
+
+        .logo {
+            height: 80px;
+            width: auto;
         }
 
         .navbar .navbar-brand {
@@ -23,7 +30,8 @@
 
         /* Menu item styles */
         .navbar .navbar-nav .nav-link {
-            color: #ffffff; /* Màu chữ trắng */
+            color: #ffffff;
+            /* Màu chữ trắng */
             font-weight: 500;
             font-size: 18px;
             padding: 10px 15px;
@@ -32,15 +40,18 @@
 
         /* Hover effect for menu items */
         .navbar .navbar-nav .nav-link:hover {
-            background-color: #0056b3; /* Màu nền khi hover */
-            color: #ffffff; /* Màu chữ khi hover */
+            background-color: #0056b3;
+            /* Màu nền khi hover */
+            color: #ffffff;
+            /* Màu chữ khi hover */
             border-radius: 5px;
             text-decoration: none;
         }
 
         /* Logo hover effect */
         .navbar .navbar-brand:hover {
-            color: #ffffff; /* Không đổi màu */
+            color: #ffffff;
+            /* Không đổi màu */
             text-decoration: none;
         }
 
@@ -61,45 +72,90 @@
 
         footer {
 
-  background-color: #003366 !important; 
-  color: #fff !important;
-   padding: 20px !important;
+            background-color: #003366 !important;
+            color: #fff !important;
+            padding: 20px !important;
+        }
+        .logosach {
+    position: relative;
+    display: inline-block;
 }
 
+.logo1 {
+    width: 50px; /* Điều chỉnh kích thước logo */
+    height: auto;
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    @* display: none; /* Ẩn số 0 ban đầu */ *@
+}
+
+        .logo{
+            margin-right: 10px;
+        }
     </style>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
             <div class="container-fluid">
-<a class="navbar-brand" asp-area="">Thư Viện<br>Đại Học Mở Hà Nội</a>
+                <img class="logo" src="~/img/Logo.png" alt=""  > 
+                <a class="navbar-brand" asp-area="">Thư Viện<br>Đại Học Mở Hà Nội</a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
 
-<!-- Giới Thiệu menu -->
- <li class="nav-item">
+                        <!-- Giới Thiệu menu -->
+                        <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"> Trang Chủ</a>
                         </li>
-
-
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy"> Giới Thiệu</a>
                         </li>
-
                         <!-- Menu Danh Mục -->
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="TaiLieu" asp-action="Index">
                                 Danh Mục </a>
                         </li>
-                          
-                        </li>
-                        
                     </ul>
+@* <div class="logosach">
+   
+        <img class="logo1" src="~/img/shopping-cart.png" alt="Giỏ sách">
+        <span id="cart-count">0</span> <!-- Hiển thị số lượng -->
+    
+</div> *@
+ <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index", "GioSach")">
+                                <img class="logo1" src="~/img/shopping-cart.png" alt="Giỏ sách">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index", "PhieuMuon")">
+                            <img class="logo1" src="~/img/phieumuon.png" alt="Phiếu Mượn">
+                        </a>
+                        </li>
+                    </ul>
+
+
+
                 </div>
             </div>
         </nav>
@@ -109,50 +165,52 @@
             @RenderBody()
         </main>
     </div>
-
-    @* <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - QuanLyThuVien - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer> *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+
+
+
+
     @await RenderSectionAsync("Scripts", required: false)
 
 
-    <footer >
-    <div class="container1">
-        <div class="row">
-            <!-- Cột 1: Thông tin thư viện -->
-            <div class="col-md-4">
-                <h5>THƯ VIỆN TRƯỜNG ĐẠI Học MỞ Hà Nội </h5>
-                <p>Mở cửa: 07h – 21h tất cả các ngày trong tuần</p>
-                <p>📞 0221 3935 866</p>
-                <p>📧 thuvien@hou.edu.vn</p>
-                <p>🏠 Thôn Lại Ốc - Xã Long Hưng - Huyện Văn Giang, Hung Yen, Vietnam</p>
-            </div>
+    <footer>
+        <div class="container1">
+            <div class="row">
+                <!-- Cột 1: Thông tin thư viện -->
+                <div class="col-md-4">
+                    <h5>THƯ VIỆN TRƯỜNG ĐẠI Học MỞ Hà Nội </h5>
+                    <p>Mở cửa: 07h – 21h tất cả các ngày trong tuần</p>
+                    <p>📞 0221 3935 866</p>
+                    <p>📧 thuvien@hou.edu.vn</p>
+                    <p>🏠 Thôn Lại Ốc - Xã Long Hưng - Huyện Văn Giang, Hung Yen, Vietnam</p>
+                </div>
 
-            <!-- Cột 2: Thông tin thư quán -->
-            <div class="col-md-4">
-                <h5>THƯ QUÁN</h5>
-                <p>Mở cửa: 07h – 17h30, từ Thứ 2 đến Thứ 7</p>
-                <p>📞 0221 3935 866</p>
-                <p>📧 thanhtientslc@gmail.com</p>
-                <p>💳 102878125475 (Nguyễn Thị Mỹ N - Ngân hàng Vietinbank)</p>
-            </div>
+                <!-- Cột 2: Thông tin thư quán -->
+                <div class="col-md-4">
+                    <h5>THƯ QUÁN</h5>
+                    <p>Mở cửa: 07h – 17h30, từ Thứ 2 đến Thứ 7</p>
+                    <p>📞 0221 3935 866</p>
+                    <p>📧 thanhtientslc@gmail.com</p>
+                    <p>💳 102878125475 (Nguyễn Thị Mỹ N - Ngân hàng Vietinbank)</p>
+                </div>
 
-            <!-- Cột 3: Bản đồ -->
-            <div class="col-md-4">
-                <h5>BẢN ĐỒ</h5>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119194.76821632135!2d105.76140749273021!3d20.999189826347436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135acc7f1b2fe7d%3A0x59f2b53c83b94875!2zVGjGsCB2aeG7h24gVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBIw6AgTuG7mWk!5e0!3m2!1svi!2s!4v1740340125959!5m2!1svi!2s"
-                    width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe>
+                <!-- Cột 3: Bản đồ -->
+                <div class="col-md-4">
+                    <h5>BẢN ĐỒ</h5>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119194.76821632135!2d105.76140749273021!3d20.999189826347436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135acc7f1b2fe7d%3A0x59f2b53c83b94875!2zVGjGsCB2aeG7h24gVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBIw6AgTuG7mWk!5e0!3m2!1svi!2s!4v1740340125959!5m2!1svi!2s"
+                        width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+
 
 </body>
+
 </html>

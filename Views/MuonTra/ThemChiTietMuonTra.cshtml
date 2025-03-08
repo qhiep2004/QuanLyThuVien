@@ -1,0 +1,43 @@
+@model QuanLyThuVien.Models.tblChiTietMuonTra
+@{
+    ViewData["Title"] = "Thêm Chi Tiết Mượn Trả";
+}
+
+<h1>Thêm Chi Tiết Mượn Trả</h1>
+
+<form asp-action="ThemChiTietMuonTra" method="post">
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" asp-for="MaMuonTra" value="@ViewBag.MaMuonTra" />
+
+    <div class="form-group">
+        <label for="MaTaiLieu">Tài Liệu</label>
+        <select asp-for="MaTaiLieu" class="form-control">
+            <option value="">-- Chọn Tài Liệu --</option>
+            @foreach (var item in ViewBag.DanhSachTaiLieu)
+            {
+                <option value="@item.MaTaiLieu">@item.TenTaiLieu</option>
+            }
+        </select>
+        @Html.ValidationMessageFor(model => model.MaTaiLieu, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SoluongMuon" class="control-label"></label>
+        <input asp-for="SoluongMuon" class="form-control" />
+        @Html.ValidationMessageFor(model => model.SoluongMuon, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TinhTrangSachMuon" class="control-label"></label>
+        <select asp-for="TinhTrangSachMuon" class="form-control">
+            <option value="Mới">Mới</option>
+            <option value="Cũ">Cũ</option>
+        </select>
+        @Html.ValidationMessageFor(model => model.TinhTrangSachMuon, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Thêm</button>
+</form>
+
+<a asp-action="ChiTiet" asp-route-id="@ViewBag.MaMuonTra" class="btn btn-secondary">Quay lại</a>

@@ -1,0 +1,28 @@
+@model List<QuanLyThuVien.Models.tblChiTietMuonTra>
+
+<h3>Chi tiết phiếu mượn</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã tài liệu</th>
+            <th>Số lượng mượn</th>
+            <th>Tình trạng sách mượn</th>
+            <th>Số lượng trả</th>
+            <th>Tình trạng trả</th>
+            <th>Phí phạt</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ct in Model)
+        {
+            <tr>
+                <td>@ct.MaTaiLieu</td>
+                <td>@ct.SoluongMuon</td>
+                <td>@ct.TinhTrangSachMuon</td>
+                <td>@ct.SoLuongTra</td>
+                <td>@ct.TinhTrangTra</td>
+                <td>@(ct.PhiPhat.HasValue? ct.PhiPhat.Value.ToString("C") : "0 VNĐ")</td>
+            </tr>
+        }
+    </tbody>
+</table>
